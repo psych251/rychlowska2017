@@ -55,7 +55,7 @@ The researchers performed their analyses in R.
 "Using the glmer function from the “lme4” package (Bates, Maechler, Bolker, & Walker, 2015), we fit a generalized linear mixed effects model with a binomial distribution and random intercepts for both participant and actor to model the probability of smile categorization for each of the five facial expressions (Reward, Affiliation, Dominance, Neutral. Disgust)" (Supplemental Material, p. 7).
 
 **Analysis of Interest**  
-To replicate the original results, five generalized linear mixed effects models were conducted using a binomial distribution. Responses (coded as "1" for smile or "0" for no smile) were entered as the dependent variable, while participant and target identity were entered as random intercepts. Chi-square goodness of fit analyses were then performed to test whether the classification frequencies for each of the five emotional expressions differed significantly from chance (50%).
+To replicate the original results, five generalized linear mixed effects models were conducted using a binomial distribution. Responses (coded as "1" for smile or "0" for no smile) were entered as the dependent variable, while participant and target identity were entered as random intercepts. Additionally, five chi-square goodness of fit analyses were performed to test whether the classification frequencies for each of the five emotional expressions differed significantly from chance (50%). **To assess whether or not the replication was successful, each of the three smile types (reward, affiliation, dominance) will need be classified as a smile, while neutral and disgust expressions will need to be classified as not a smile, significantly above chance** 
 
 ### Differences from Original Study
 
