@@ -35,6 +35,8 @@ Additionally, a *post-hoc* power analysis was conducted using the effect size fo
 
 Based on the power analysis, 55 participants will be recruited on Amazon Mechanical Turk for the replication. (Due to course budget restrictions, the original sample size will not be used.) Participants will be required to be located in the United States and have a minimum of an 80% approval rate.
 
+Participants will repeat MTurk WorkerID's will be excluded from final data analysis.
+
 
 ### Materials
 
@@ -92,11 +94,14 @@ library(lme4)
 ```{r}
 #### Import data
 # read in individual subject data
-subject1 <- data.frame(fromJSON("pilotA/subject1.json"))
-subject2 <- data.frame(fromJSON("pilotA/subject2.json"))
-subject3 <- data.frame(fromJSON("pilotA/subject3.json"))
+subject1 <- data.frame(fromJSON("pilotB/subject1.json"))
+subject2 <- data.frame(fromJSON("pilotB/subject2.json"))
+subject3 <- data.frame(fromJSON("pilotB/subject3.json"))
+subject4 <- data.frame(fromJSON("pilotB/subject4.json"))
+subject5 <- data.frame(fromJSON("pilotB/subject5.json"))
+
 # combine data
-data_raw <- rbind(subject1,subject2,subject3)
+data_raw <- rbind(subject1,subject2,subject3,subject4,subject5)
 
 #### Data exclusion / filtering
 
@@ -151,8 +156,9 @@ mean_results_table <- kable(mean_results_expr[c("expr_t","prop_smile","stdv_smil
 mean_results_table
 
 # plot means for each expression
-ggplot(mean_results_expr, aes(x = expr_t, y = prop_smile)) +
+ggplot(mean_results_expr, aes(x = expr_t, y = prop_smile, fill = expr_t)) +
   geom_bar(stat = "identity") +
+  scale_fill_manual(values=c("dodgerblue3","dodgerblue3","dodgerblue3","grey","grey")) +
   geom_errorbar(width = .33, aes(ymin = se_min, ymax = se_max)) +
   ggtitle("Proportion of Images Categorized As Smiling By Expression") +
   ylab("Proportion Categorized As Smiling") +
@@ -161,7 +167,7 @@ ggplot(mean_results_expr, aes(x = expr_t, y = prop_smile)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-```{r fig.width = 8}
+```{r fig.width = 10}
 # means (SE) for each expression and participant
 mean_results_expr_subj = data_tidy %>%
   group_by(WorkerId, expr_t) %>%
@@ -175,8 +181,9 @@ mean_results_expr_subj = data_tidy %>%
          se_max = prop_smile + se_smile)
 
 # plot means for each expression and subject
-ggplot(mean_results_expr_subj, aes(x = expr_t, y = prop_smile)) +
+ggplot(mean_results_expr_subj, aes(x = expr_t, y = prop_smile, fill = expr_t)) +
   geom_bar(stat = "identity") +
+  scale_fill_manual(values=c("dodgerblue3","dodgerblue3","dodgerblue3","grey","grey")) +
   geom_errorbar(width = .33, aes(ymin = se_min, ymax = se_max)) +
   facet_grid(~ WorkerId) +
   ggtitle("Proportion of Images Categorized As Smiling By Expression") +
@@ -256,28 +263,28 @@ esti_prob_table <- kable(esti_prob, digits = 3)
 esti_prob_table
 ```
 
-Lastly, a chi-square goodness of fit analysis was performed to test whether the categorization frequencies for each of the five expressions differed from chance (50%).
+Lastly, a series of chi-square goodness of fit analyses was performed to test whether the categorization frequencies for each of the five expressions differed from chance (50%). **In particular, these analyses were used to provide support for replication (or lack thereof) of the researchers' original findings.**
 
 ```{r}
 # reward
 observed_rewa = c(mean_results_expr$count_yesSmile[1],mean_results_expr$count_noSmile[1])
-chisq_rewa = chisq.test(observed_rewa, p = c(0.5, 0.5) ); chisq_rewa
+chisq_rewa = chisq.test(observed_rewa, p = c(0.5, 0.5)); chisq_rewa
 
 # affiliation
 observed_affi = c(mean_results_expr$count_yesSmile[2],mean_results_expr$count_noSmile[2])
-chisq_affi = chisq.test(observed_affi, p = c(0.5, 0.5) ); chisq_affi
+chisq_affi = chisq.test(observed_affi, p = c(0.5, 0.5)); chisq_affi
 
 # dominance
 observed_domi = c(mean_results_expr$count_yesSmile[3],mean_results_expr$count_noSmile[3])
-chisq_domi = chisq.test(observed_domi, p = c(0.5, 0.5) ); chisq_domi
+chisq_domi = chisq.test(observed_domi, p = c(0.5, 0.5)); chisq_domi
 
 # neutral
 observed_neut = c(mean_results_expr$count_yesSmile[4],mean_results_expr$count_noSmile[4])
-chisq_neut = chisq.test(observed_neut, p = c(0.5, 0.5) ); chisq_neut
+chisq_neut = chisq.test(observed_neut, p = c(0.5, 0.5)); chisq_neut
 
 # disgust
 observed_disg = c(mean_results_expr$count_yesSmile[5],mean_results_expr$count_noSmile[5])
-chisq_disg = chisq.test(observed_disg, p = c(0.5, 0.5) ); chisq_disg
+chisq_disg = chisq.test(observed_disg, p = c(0.5, 0.5)); chisq_disg
 ```
 
 ```{r include=FALSE}
@@ -291,7 +298,7 @@ affi_pval <- round(chisq_affi$p.value, digits = 2) # pvalue rounds to 0
 
 domi_stat <- round(chisq_domi$statistic, digits = 2)
 domi_df <- chisq_domi$parameter
-domi_pval <- round(chisq_domi$p.value, digits = 2)
+domi_pval <- round(chisq_domi$p.value, digits = 2) # pvalue rounds to 0
 
 neut_stat <- round(chisq_neut$statistic, digits = 2)
 neut_df <- chisq_neut$parameter
@@ -313,12 +320,17 @@ Include follow-up analyses.  -->
 
 Pilot data were collected from three subjects (one non-naive, two naive).
 
-Preliminary results revealed that 100% of reward smiles were categorization as a smile. While a generalized linear model could not be conducted, a chi-square goodness of fit test revealed that categorization was significantly better than chance, $\chi^2$(`r rewa_df`) = `r rewa_stat`, *p* < .001. Also consistent with the researchers' original findings, affilition smiles were highly likely to be classified as a smile, estimated probability = `r affi_prob_perc`%, $\chi^2$(`r affi_df`) = `r affi_stat`, *p* < .001. However, dominance smiles were not classified as a smile above chance, estimated probability = `r domi_prob_perc`%, $\chi^2$(`r domi_df`) = `r domi_stat`, *p* = `r domi_pval`.
+Preliminary results revealed that 100% of reward smiles were categorization as a smile. While a generalized linear model could not be conducted, a chi-square goodness of fit test revealed that categorization was significantly better than chance, $\chi^2$(`r rewa_df`) = `r rewa_stat`, *p* < .001. Also consistent with the researchers' original findings, affilition smiles were highly likely to be classified as a smile, estimated probability = `r affi_prob_perc`%, $\chi^2$(`r affi_df`) = `r affi_stat`, *p* < .001. Similarly, dominance smiles were classified as a smile significantly above chance, estimated probability = `r domi_prob_perc`%, $\chi^2$(`r domi_df`) = `r domi_stat`, *p* < .001.
 
 As was found in the original experiment, neutral and disgust expressions were significantly less likely to be categorized as a smile compared to no smile (neutral: estimated probability = `r neut_prob_perc`%, $\chi^2$(`r neut_df`) = `r neut_stat`, *p* < .001; disgust: estimated probability = `r disg_prob_perc`%, $\chi^2$(`r disg_df`) = `r disg_stat`, *p* < .001).
 
-Taken together, the preliminary results partially replicate those reported by Rychlowska et al. (2017), with dominance expressions yielding the only inconsistent finding.
+Taken together, the preliminary results replicate those reported by Rychlowska et al. (2017), such that all three smile types (reward, affiliation, dominance) were categorized as a smile significantly above chance. In contrast, neutral and disgust expressions were not likely to be classified as a smile.
 
 ### Commentary
 
-I do not believe the differences between the original paradigm and present replication were the cause of the inconsistent finding. The pilot study had an extremely limited sample size (N = 3), and this was likely a stronger contributor. Additionally, I was unable to run a generalized linear model to predict the probability of reward smiles given that 100% of the reward expressions were classified as a smile. Perhaps with a larger sample size, there will be greater variability in categorization of reward expressions.
+A small pilot study (N = 5) was conducted on MTurk. While I was unable to run a generalized linear model to predict the probability of reward smiles given that 100% of the reward expressions were classified as a smile, perhaps with a larger sample size, there will be greater variability in categorization of these expressions.
+
+
+## Reference
+
+Rychlowska, M., Jack, R. E., Garrod, O. G., Schyns, P. G., Martin, J. D., & Niedenthal, P. M. (2017). Functional smiles: Tools for love, sympathy, and war. *Psychological Science*, *28*(9), 1259-1270.
