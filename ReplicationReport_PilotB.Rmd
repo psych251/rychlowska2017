@@ -26,42 +26,48 @@ An *a priori* power analysis was performed using (G*Power version 3.1) for a $\c
 ![](power_apriori.png)
 
 #### *Post-Hoc* analysis
-Additionally, a *post-hoc* power analysis was conducted using the effect size for dominance expressions. With 73 subjects and $\alpha$ = 0.05, the researchers achieved approximately 90% power.
+Additionally, a *post-hoc* power analysis was conducted. I used the estimated probability that dominance expressions were categorized as a smile (69%) to calculate the effect size (as indicated in the left facet of the screenshot). Specifically, dominance was chosen as it yielded the smallest effect size of the five emotional expressions. With 73 subjects and $\alpha$ = 0.05, the researchers achieved approximately 90% power.
 
 ![](power_posthoc.png)
 
 
 ### Planned Sample
 
-Based on the power analysis, 55 participants will be recruited on Amazon Mechanical Turk for the replication. (Due to course budget restrictions, the original sample size will not be used.) Participants will be required to be located in the United States and have a minimum of an 80% approval rate.
+Based on the power analysis, 55 participants will be recruited on Amazon Mechanical Turk (MTurk) for the replication. (Due to course budget restrictions, the original sample size will not be used.) Participants will be required to be located in the United States and have a minimum of an 80% approval rate.
 
-Participants will repeat MTurk WorkerID's will be excluded from final data analysis.
+Participants with repeat MTurk WorkerID's will be excluded. Additionally, experimental trials for which reaction time is less than 200 milliseconds will be excluded from final data analysis.
 
 
 ### Materials
 
 #### Stimuli
-The stimuli used for the replication were taken from Supplemental Material, S4. As Rychlowska et al. (2017) describe:  
-"Informed by the dynamic models of reward, affiliative, and dominance smiles, we recorded a set of facial expression videos posed by experienced actors (7 females, 7 African Americans) [sic]. Actors were coached about the Action Units diagnostic of each smile and asked to imagine themselves in the situations associated with the functional smiles: for the reward smile – ‘A person learns that he/she just got hired for his/her dream job’; for the affiliative smile – ‘A person thanks someone for their help in a store’; for the dominance smile – ‘A person crosses paths with an enemy after winning an important prize’ (Martin et al., 2017). In addition to the smile videos, actors were also asked to encode neutral and disgusted expressions. Here, we used still 75 images (15 models X 5 expressions) representing apex intensities of each facial display (see https://tinyurl.com/ztl425x for the full stimuli set). On average, photographs of dominance smiles involved lower activation of Bilateral Lip Corner Puller (AU12; *M* = 1.05, *SD* = 0.78) and higher levels of Nose Wrinkler (AU9; *M* = 1.17, *SD* = 0.69) than photographs of reward smiles *M* = 2.28, *SD* = 0.82), *t*(11) = -4.55, *p*=.001; *M* = 1.16, *SD* = 0.05), *t*(11) = 2.85, *p*=.016, as quantified by an automatic facial expression recognition software (Computer Expression Recognition Toolbox; Littlewort et al., 20111)." (Supplemental Material, p.6).
+The stimuli used for the replication were taken from Supplemental Material, S4.
+
+>As Rychlowska et al. (2017) describe: "Informed by the dynamic models of reward, affiliative, and dominance smiles, we recorded a set of facial expression videos posed by experienced actors (7 females, 7 African Americans) [sic]. Actors were coached about the Action Units diagnostic of each smile and asked to imagine themselves in the situations associated with the functional smiles: for the reward smile – ‘A person learns that he/she just got hired for his/her dream job’; for the affiliative smile – ‘A person thanks someone for their help in a store’; for the dominance smile – ‘A person crosses paths with an enemy after winning an important prize’ (Martin et al., 2017). In addition to the smile videos, actors were also asked to encode neutral and disgusted expressions. Here, we used still 75 images (15 models X 5 expressions) representing apex intensities of each facial display (see https://tinyurl.com/ztl425x for the full stimuli set). On average, photographs of dominance smiles involved lower activation of Bilateral Lip Corner Puller (AU12; *M* = 1.05, *SD* = 0.78) and higher levels of Nose Wrinkler (AU9; *M* = 1.17, *SD* = 0.69) than photographs of reward smiles *M* = 2.28, *SD* = 0.82), *t*(11) = -4.55, *p*=.001; *M* = 1.16, *SD* = 0.05), *t*(11) = 2.85, *p*=.016, as quantified by an automatic facial expression recognition software (Computer Expression Recognition Toolbox; Littlewort et al., 20111)." (Supplemental Material, p.6).
 
 ### Procedure	
-As Rychlowska et al. (2017) report: "We used an online interface created in Qualtrics to display the stimuli and collect responses (version 1.869s, Provo, UT). On each experimental trial, participants viewed the facial expression stimulus (size: 1668 x 938 pixels) along with the question: ‘Is it a smile?’ and responded ‘yes’ or ‘no’. We presented the stimuli in random order, displayed in the center of the screen on a white background, with the question above the facial expression and the response options below. After evaluating the 75 facial expressions, participants completed the Liebowitz Social Anxiety Scale (LSAS; Liebowitz, 1987); and the Social Phobia Inventory (SPIN; Connor et al., 2000). These two scales were included for the needs of another study and will not be discussed further." (Supplemental Material, pp. 6-7).
+As Rychlowska et al. (2017) report:
+
+>"We used an online interface created in Qualtrics to display the stimuli and collect responses (version 1.869s, Provo, UT). On each experimental trial, participants viewed the facial expression stimulus (size: 1668 x 938 pixels) along with the question: ‘Is it a smile?’ and responded ‘yes’ or ‘no’. We presented the stimuli in random order, displayed in the center of the screen on a white background, with the question above the facial expression and the response options below. After evaluating the 75 facial expressions, participants completed the Liebowitz Social Anxiety Scale (LSAS; Liebowitz, 1987); and the Social Phobia Inventory (SPIN; Connor et al., 2000). These two scales were included for the needs of another study and will not be discussed further." (Supplemental Material, pp. 6-7).
 
 In contrast to the original experiment, the replication study was implemented using JSPsych 5.0.3. Participants were randomly presented with one image (730 x 410 pixels) on the center of a white screen; the question, 'Is it a smile?', appeared on top of the image while the 'Yes' and 'No' responses were presented beneath it. Participants responded by pressing the 'Q' and 'P' keys, and their reaction time was recorded. The side on which the responses appeared was counterbalanced across participants. In other words, some participants viewed 'Yes' and 'No' on the left and right, respectively, while others viewed the opposite. After the image categorization task, participants completed a short demographics questionnaire where they indicated their sex, race, and handedness. Moreover, participants completed an experimental check in which they indicated what key corresponded to the 'Yes' and 'No' responses. Neither the Liebowitz Social Anxiety Scale nor the Social Phobia Inventory were included.
 
 
 ### Analysis Plan
 
-The researchers performed their analyses in R.
-
-"Using the glmer function from the “lme4” package (Bates, Maechler, Bolker, & Walker, 2015), we fit a generalized linear mixed effects model with a binomial distribution and random intercepts for both participant and actor to model the probability of smile categorization for each of the five facial expressions (Reward, Affiliation, Dominance, Neutral. Disgust)" (Supplemental Material, p. 7).
-
 **Analysis of Interest**  
-To replicate the original results, five generalized linear mixed effects models were conducted using a binomial distribution. Responses (coded as "1" for smile or "0" for no smile) were entered as the dependent variable, while participant and target identity were entered as random intercepts. Additionally, five chi-square goodness of fit analyses were performed to test whether the classification frequencies for each of the five emotional expressions differed significantly from chance (50%). **To assess whether or not the replication was successful, each of the three smile types (reward, affiliation, dominance) will need be classified as a smile, while neutral and disgust expressions will need to be classified as not a smile, significantly above chance.** 
+Five chi-square goodness of fit analyses were performed to test whether the classification frequencies for each of the emotional expressions differed significantly from chance (50%). **To assess whether the replication was successful, each of the three smile types (reward, affiliation, dominance) should be categorized as a smile while neutral and disgust expressions should be classified as not a smile, significantly above chance.**
+
+>"Using the glmer function from the “lme4” package (Bates, Maechler, Bolker, & Walker, 2015), we fit a generalized linear mixed effects model with a binomial distribution and random intercepts for both participant and actor to model the probability of smile categorization for each of the five facial expressions (Reward, Affiliation, Dominance, Neutral. Disgust)" (Supplemental Material, p. 7).
+
+As a secondary (exploratory) analysis, generalized linear mixed effects models were conducted using a binomial distribution. Responses (coded as "1" for smile or "0" for no smile) were entered as the dependent variable, while participant and target identity were entered as random intercepts. It is unclear from the original article specifically how the authors fit these models. As such, the analyses were performed in three different ways:  
+1. Five generalized linear mixed effects (intercept-only) models were conducted separately, one for each emotional expression.  
+2. One generalized linear mixed effecs model was conducted. Emotion category was entered as the independent variable as a factor with five levels (reward, affiliation, dominance, neutral, disgust).  
+3. One generalized linear mixed effects model was conducted. Emotion category was entered as the independent variable as a factor with two levels (smile [reward, affiliation, dominance], no smile [neutral, disgust]).
 
 ### Differences from Original Study
 
-While the original paradigm was created in Qualtrics, the replication study was implemented in JSPsych 5.0.3. The size of the images was reduced from 1668 x 938 pixels to 730 x 410 pixels, although the ratio remained approximately the same. The researchers did not specify whether the 'Yes' and 'No' responses were positioned horizontally or vertically, or the order in which the responses appeared. In the current replication, the responses were positioned horizontally and their order was counterbalanced across participants. Participants then responded with key presses. Lastly, the Liebowitz Social Anxiety Scale and the Social Phobia Inventory were excluded, as they were not included in the researchers' analyses. As the researchers note, "These two scales were included for the needs of another study and will not be discussed further" (Supplemental Material, p. 7). I do not anticipate that these differences between the original and replication paradigms will impact the main pattern of findings.
+While the original paradigm was created in Qualtrics, the replication study was implemented in JSPsych 5.0.3. The size of the images was reduced from 1668 x 938 pixels to 730 x 410 pixels, although the ratio remained approximately the same. The researchers did not specify whether the 'Yes' and 'No' responses were positioned horizontally or vertically, or the order in which the responses appeared. In the current replication, the responses were positioned horizontally and their order was counterbalanced across participants. Participants then responded with key presses. Lastly, the Liebowitz Social Anxiety Scale and the Social Phobia Inventory were excluded as the two scales appeared after the main dependent variables of interest and were not part of the researchers' own analyses. As the researchers note, "These two scales were included for the needs of another study and will not be discussed further" (Supplemental Material, p. 7). I do not anticipate that these differences between the original and replication paradigms will impact the main pattern of findings.
 
 
 <!-- ### Methods Addendum (Post Data Collection)
@@ -73,12 +79,12 @@ While the original paradigm was created in Qualtrics, the replication study was 
   Any differences from what was described as the original plan, or “none”. -->
 
 ## Results
-"Participants were more likely than not to categorize each of the three smile types as smiles (Reward: estimated probability = 98%, $\chi^2$(1) = 170.7, *p* < .0001; Affiliation: estimated probability = 86%, $\chi^2$(1) = 44.7, *p* < .0001, Dominance: estimated probability = 69%, $\chi^2$(1) = 8.6, *p* = 003). Furthermore, participants were more likely to categorize Neutral and Disgust expressions as not a smile than as a smile (Neutral: estimated probability = 6%, $\chi^2$(1) = 91.8, *p* < .001; Disgust: estimated probability = 2%, $\chi^2$(1) = 167.4, *p* <.001)." (Supplemental Material, p. 7).
+> "Participants were more likely than not to categorize each of the three smile types as smiles (Reward: estimated probability = 98%, $\chi^2$(1) = 170.7, *p* < .0001; Affiliation: estimated probability = 86%, $\chi^2$(1) = 44.7, *p* < .0001, Dominance: estimated probability = 69%, $\chi^2$(1) = 8.6, *p* = 003). Furthermore, participants were more likely to categorize Neutral and Disgust expressions as not a smile than as a smile (Neutral: estimated probability = 6%, $\chi^2$(1) = 91.8, *p* < .001; Disgust: estimated probability = 2%, $\chi^2$(1) = 167.4, *p* <.001)." (Supplemental Material, p. 7).
 
 ### Data Preparation
 Link to replication paradigm: http://stanford.edu/~eblevins/Psych251_Task/preview.html
 
-Data were collected from three pilot subjects (two naive, one non-naive). Participants' individual data files were imported and then merged into one dataframe. Because the data were stored in JSON, the R package `jsonlite` was utilized. For the confirmatory analyses, only the experimental trials were retained; condition, target emotional expression, target gender, and target identity were converted to factors, specifying the levels of each. Additionally, participants' key presses were recoded into a dichotomous response variable, whereby "1" corresponds to a smile and "0" corresponds to no smile.  
+Data were collected from five pilot subjects. Participants' individual data files were imported and then merged into one dataframe. Because the data were stored in JSON, the R package `jsonlite` was utilized. For the confirmatory analyses, only the experimental trials were retained; condition, target emotional expression, target gender, and target identity were converted to factors, specifying the levels of each. Additionally, participants' key presses were recoded into a dichotomous response variable, whereby "1" corresponds to a smile and "0" corresponds to no smile.  
 
 ```{r include=FALSE}
 #### Load Relevant Libraries and Functions
@@ -89,19 +95,22 @@ library(tidyr)
 library(dplyr)
 library(jsonlite)
 library(lme4)
+library(purrr)
 ```
 
-```{r}
+```{r warning=FALSE}
 #### Import data
-# read in individual subject data
-subject1 <- data.frame(fromJSON("pilotB/subject1.json"))
-subject2 <- data.frame(fromJSON("pilotB/subject2.json"))
-subject3 <- data.frame(fromJSON("pilotB/subject3.json"))
-subject4 <- data.frame(fromJSON("pilotB/subject4.json"))
-subject5 <- data.frame(fromJSON("pilotB/subject5.json"))
-
-# combine data
-data_raw <- rbind(subject1,subject2,subject3,subject4,subject5)
+# list files in folder
+file_names <- list.files("./pilotB", pattern = "*.json", full.names = T)
+# list number of subjects
+n_subjects <- length(file_names)
+# loop through files to aggregate
+temp = NULL;
+data_raw = NULL;
+for (i in 1:n_subjects){
+  temp <- data.frame(fromJSON(file_names[i]));
+  data_raw = bind_rows(data_raw, temp)
+  }
 
 #### Data exclusion / filtering
 
@@ -110,6 +119,8 @@ data_raw <- rbind(subject1,subject2,subject3,subject4,subject5)
 data_tidy <- data_raw %>%
   # retain only experimental trials (no demographics)
   filter(answers.data.trial_index >= 1 & answers.data.trial_index <= 75) %>%
+  # exclude participants for RT < 200
+  filter(answers.data.time_elapsed > 200) %>%
   mutate(rt = as.numeric(answers.data.rt),
          key_press = as.numeric(answers.data.key_press),
          trial = as.numeric(answers.data.trial_index),
@@ -129,13 +140,17 @@ data_tidy <- data_raw %>%
   mutate(response = 
            ifelse(condition == 1 & key_press == 81, 1,
                   ifelse(condition == 2 & key_press == 80, 1, 0))) %>%
-  select("WorkerId","rt","key_press","trial","condition","expr_t","gend_t","name_t","response")
+  # convert expr_t into dichotomous variable: smile (1) and no smile (0)
+  mutate(expr_t_smileVSnone =
+           ifelse(expr_t == "reward" | expr_t == "dominance" | expr_t == "affiliation", 1, 0)) %>%
+  select("WorkerId","rt","key_press","trial","condition","expr_t","gend_t","name_t","response",
+         "expr_t_smileVSnone")
 ```
 
 
 ### Confirmatory Analysis
 
-The proportion of images categorized as a smile was computed for each emotional expression. The corresponding proportions were plotted; error bars represent standard error of the mean.
+The proportion of images categorized as a smile was computed for each emotional expression. The corresponding proportions were plotted; error bars represent an approximation for 95% confidence intervals.
 
 ```{r}
 # check means and visualize
@@ -149,7 +164,10 @@ mean_results_expr = data_tidy %>%
             count_noSmile = n() - count_yesSmile,
             count_total = n()) %>%
   mutate(se_min = prop_smile - se_smile,
-         se_max = prop_smile + se_smile)
+         se_max = prop_smile + se_smile,
+         # approximation for 95% CI
+         ci_min = prop_smile - (1.96 * se_smile),
+         ci_max = prop_smile + (1.96 * se_smile))
 
 # organize results in table
 mean_results_table <- kable(mean_results_expr[c("expr_t","prop_smile","stdv_smile","se_smile","count_yesSmile","count_noSmile","count_total")], digits = 2)
@@ -159,44 +177,101 @@ mean_results_table
 ggplot(mean_results_expr, aes(x = expr_t, y = prop_smile, fill = expr_t)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values=c("dodgerblue3","dodgerblue3","dodgerblue3","grey","grey")) +
-  geom_errorbar(width = .33, aes(ymin = se_min, ymax = se_max)) +
+  geom_errorbar(width = .33, aes(ymin = ci_min, ymax = ci_max)) +
   ggtitle("Proportion of Images Categorized As Smiling By Expression") +
   ylab("Proportion Categorized As Smiling") +
   xlab("Target Expression") +
+  geom_hline(yintercept = 0.50, linetype = "dashed", color = "black", size = 0.5) +
   ggthemes::theme_few() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-```{r fig.width = 10}
-# means (SE) for each expression and participant
+```{r}
+# means, SE, and 95% CI for each expression and participant
 mean_results_expr_subj = data_tidy %>%
   group_by(WorkerId, expr_t) %>%
   summarise(prop_smile = mean(response),
             stdv_smile = sd(response),
             se_smile = stdv_smile/sqrt(n()),
+            ci_smile = 1.96*se_smile,
             count_yesSmile = sum(response),
             count_noSmile = n() - count_yesSmile,
             count_total = n()) %>%
   mutate(se_min = prop_smile - se_smile,
-         se_max = prop_smile + se_smile)
+         se_max = prop_smile + se_smile,
+         # approximation for 95% CI
+         ci_min = prop_smile - ci_smile,
+         ci_max = prop_smile + ci_smile)
 
 # plot means for each expression and subject
-ggplot(mean_results_expr_subj, aes(x = expr_t, y = prop_smile, fill = expr_t)) +
-  geom_bar(stat = "identity") +
-  scale_fill_manual(values=c("dodgerblue3","dodgerblue3","dodgerblue3","grey","grey")) +
-  geom_errorbar(width = .33, aes(ymin = se_min, ymax = se_max)) +
-  facet_grid(~ WorkerId) +
+ggplot(mean_results_expr_subj, aes(x = expr_t, y = prop_smile)) +
+  geom_jitter(aes(color = expr_t), size = 1) +
+  scale_color_manual(values=c("dodgerblue3","dodgerblue3","dodgerblue3","grey","grey")) +
   ggtitle("Proportion of Images Categorized As Smiling By Expression") +
   ylab("Proportion Categorized As Smiling") +
   xlab("Target Expression") +
+  geom_hline(yintercept = 0.50, linetype = "dashed", color = "black", size = 0.5) +
   ggthemes::theme_few() +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  scale_x_discrete(labels = c("rewa","affi","domi","neut","disg"))
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
-Next, five generalized linear models were conducted using `glmer()`. The coefficient was extracted from each model and converted into a probability.
 
-The classification of reward expressions as a smile was 100%. As a result, the model could not be run, and it was commented out.
+Next, a series of chi-square goodness of fit analyses was performed to test whether the categorization frequencies for each of the five expressions differed from chance (50%). **In particular, these analyses were used to provide support for replication (or lack thereof) of the researchers' original findings.**
+
+```{r}
+# reward
+observed_rewa = c(mean_results_expr$count_yesSmile[1],mean_results_expr$count_noSmile[1])
+chisq_rewa = chisq.test(observed_rewa, p = c(0.5, 0.5)); chisq_rewa
+
+# affiliation
+observed_affi = c(mean_results_expr$count_yesSmile[2],mean_results_expr$count_noSmile[2])
+chisq_affi = chisq.test(observed_affi, p = c(0.5, 0.5)); chisq_affi
+
+# dominance
+observed_domi = c(mean_results_expr$count_yesSmile[3],mean_results_expr$count_noSmile[3])
+chisq_domi = chisq.test(observed_domi, p = c(0.5, 0.5)); chisq_domi
+
+# neutral
+observed_neut = c(mean_results_expr$count_yesSmile[4],mean_results_expr$count_noSmile[4])
+chisq_neut = chisq.test(observed_neut, p = c(0.5, 0.5)); chisq_neut
+
+# disgust
+observed_disg = c(mean_results_expr$count_yesSmile[5],mean_results_expr$count_noSmile[5])
+chisq_disg = chisq.test(observed_disg, p = c(0.5, 0.5)); chisq_disg
+```
+
+```{r include=FALSE}
+rewa_stat <- round(chisq_rewa$statistic, digits = 2)
+rewa_df <- chisq_rewa$parameter
+rewa_pval <- round(chisq_rewa$p.value, digits = 2) # pvalue rounds to 0
+
+affi_stat <- round(chisq_affi$statistic, digits = 2)
+affi_df <- chisq_affi$parameter
+affi_pval <- round(chisq_affi$p.value, digits = 2) # pvalue rounds to 0
+
+domi_stat <- round(chisq_domi$statistic, digits = 2)
+domi_df <- chisq_domi$parameter
+domi_pval <- round(chisq_domi$p.value, digits = 2) # pvalue rounds to 0
+
+neut_stat <- round(chisq_neut$statistic, digits = 2)
+neut_df <- chisq_neut$parameter
+neut_pval <- round(chisq_neut$p.value, digits = 2) # pvalue rounds to 0
+
+disg_stat <- round(chisq_disg$statistic, digits = 2)
+disg_df <- chisq_disg$parameter
+disg_pval <- round(chisq_disg$p.value, digits = 2) # pvalue rounds to 0
+```
+
+
+### Exploratory Analyses
+
+A series of generalized linear models were conducted using `glmer()`. As mentioned previously, it is unclear from the original article specifically how the authors fit these models so the analyses were performed in three different ways:  
+1. Five generalized linear mixed effects (intercept-only) models were conducted separately, one for each emotional expression.  
+2. One generalized linear mixed effecs model was conducted. Emotion category was entered as the independent variable as a factor with five levels (reward, affiliation, dominance, neutral, disgust).  
+3. One generalized linear mixed effects model was conducted. Emotion category was entered as the independent variable as a factor with two levels (smile [reward, affiliation, dominance], no smile [neutral, disgust]).
+
+**1. five generalized linear mixed effects (intercept-only) models**  
+The classification of reward expressions as a smile was 100%. As a result, the model could not be run and was commented out.
 
 ```{r}
 # reward
@@ -263,58 +338,33 @@ esti_prob_table <- kable(esti_prob, digits = 3)
 esti_prob_table
 ```
 
-Lastly, a series of chi-square goodness of fit analyses was performed to test whether the categorization frequencies for each of the five expressions differed from chance (50%). **In particular, these analyses were used to provide support for replication (or lack thereof) of the researchers' original findings.**
+**2. one generalized linear mixed effecs model (emotion as factor with five levels)**  
+Likely due to small sample size (N = 5) of pilot, the model failed to converge. As a result, it was commented out.
 
 ```{r}
-# reward
-observed_rewa = c(mean_results_expr$count_yesSmile[1],mean_results_expr$count_noSmile[1])
-chisq_rewa = chisq.test(observed_rewa, p = c(0.5, 0.5)); chisq_rewa
+# check levels of factor
+# levels(data_tidy$expr_t)
+# change reference group to disgust
+# data_tidy$expr_t <- relevel(data_tidy$expr_t, ref = "disgust")
 
-# affiliation
-observed_affi = c(mean_results_expr$count_yesSmile[2],mean_results_expr$count_noSmile[2])
-chisq_affi = chisq.test(observed_affi, p = c(0.5, 0.5)); chisq_affi
-
-# dominance
-observed_domi = c(mean_results_expr$count_yesSmile[3],mean_results_expr$count_noSmile[3])
-chisq_domi = chisq.test(observed_domi, p = c(0.5, 0.5)); chisq_domi
-
-# neutral
-observed_neut = c(mean_results_expr$count_yesSmile[4],mean_results_expr$count_noSmile[4])
-chisq_neut = chisq.test(observed_neut, p = c(0.5, 0.5)); chisq_neut
-
-# disgust
-observed_disg = c(mean_results_expr$count_yesSmile[5],mean_results_expr$count_noSmile[5])
-chisq_disg = chisq.test(observed_disg, p = c(0.5, 0.5)); chisq_disg
+# model_expr_five = glmer(response ~ expr_t + (1 | WorkerId) + (1 | name_t), family = binomial, data = data_tidy)
+# summary(model_expr_five)
 ```
 
-```{r include=FALSE}
-rewa_stat <- round(chisq_rewa$statistic, digits = 2)
-rewa_df <- chisq_rewa$parameter
-rewa_pval <- round(chisq_rewa$p.value, digits = 2) # pvalue rounds to 0
+**3. one generalized linear mixed effecs model (emotion as factor with two levels)**  
 
-affi_stat <- round(chisq_affi$statistic, digits = 2)
-affi_df <- chisq_affi$parameter
-affi_pval <- round(chisq_affi$p.value, digits = 2) # pvalue rounds to 0
+```{r}
+# convert to factor and set levels 
+data_tidy$expr_t_smileVSnone_f <- factor(data_tidy$expr_t_smileVSnone, labels = c("none","smile"))
 
-domi_stat <- round(chisq_domi$statistic, digits = 2)
-domi_df <- chisq_domi$parameter
-domi_pval <- round(chisq_domi$p.value, digits = 2) # pvalue rounds to 0
+# change reference group to be no smile
+data_tidy$expr_t_smileVSnone_f <- relevel(data_tidy$expr_t_smileVSnone_f, ref = "none")
 
-neut_stat <- round(chisq_neut$statistic, digits = 2)
-neut_df <- chisq_neut$parameter
-neut_pval <- round(chisq_neut$p.value, digits = 2) # pvalue rounds to 0
-
-disg_stat <- round(chisq_disg$statistic, digits = 2)
-disg_df <- chisq_disg$parameter
-disg_pval <- round(chisq_disg$p.value, digits = 2) # pvalue rounds to 0
+model_expr_two = glmer(response ~ expr_t_smileVSnone_f + (1 | WorkerId) + (1 | name_t), family = binomial, data = data_tidy)
+summary(model_expr_two)
 ```
 
-
-<!-- ### Exploratory Analyses
-
-Include follow-up analyses.  -->
-
-## Discussion
+<!-- ### ## Discussion
 
 ### Summary of Replication Attempt
 
@@ -329,7 +379,7 @@ Taken together, the preliminary results replicate those reported by Rychlowska e
 ### Commentary
 
 A small pilot study (N = 5) was conducted on MTurk. While I was unable to run a generalized linear model to predict the probability of reward smiles given that 100% of the reward expressions were classified as a smile, perhaps with a larger sample size, there will be greater variability in categorization of these expressions.
-
+-->
 
 ## Reference
 
